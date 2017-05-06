@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SteamVR_TrackedController))]
-public class VrController : MonoBehaviour {
+public class ButtonController : MonoBehaviour {
 
     public string controllerName = "Controller";
     public ControllerButton interactionButton = ControllerButton.Trigger;
-    public VrButton activeButton;
+    public ButtonObject activeButton;
 
     SteamVR_TrackedController _controller;
 
@@ -42,7 +42,7 @@ public class VrController : MonoBehaviour {
 
         if (buttonPressed)
         {
-            activeButton.Click(controllerName);
+            activeButton.button.Click(controllerName);
             activeButton = null;
         }
     }
